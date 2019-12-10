@@ -1,6 +1,6 @@
-class brew {
+class Brew {
   final String name;
   final String sugar;
   final int strength;
-  brew({this.name, this.strength, this.sugar});
+  Brew({this.name, this.strength, this.sugar});
 }
