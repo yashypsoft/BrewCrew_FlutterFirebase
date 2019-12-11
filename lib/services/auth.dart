@@ -22,6 +22,8 @@ class AuthService {
     try {
       AuthResult result = await _auth.signInAnonymously();
       FirebaseUser user = result.user;
+      //Create a new document for the user with the uid
+      await DatabaseService(uid: user.uid).updateUserData('0', 'New Member', 100);
       return _userfrmfirebaseUser(user).uid;
     } catch (e) {
       print(e.toString());
@@ -50,7 +52,7 @@ class AuthService {
       FirebaseUser user = result.user;
 
       //Create a new document for the user with the uid
-      await DatabaseService(uid: user.uid).updateUserData('0', "New Member", 100);
+      await DatabaseService(uid: user.uid).updateUserData('0', 'New Member', 100);
       
       return _userfrmfirebaseUser(user);
     } catch (e) {
