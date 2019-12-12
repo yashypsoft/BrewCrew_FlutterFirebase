@@ -27,6 +27,8 @@ class Home extends StatelessWidget {
     return StreamProvider<List<Brew>>.value(
       value: DatabaseService().brews,
       child: Scaffold(
+          resizeToAvoidBottomPadding: false ,
+
         backgroundColor: Colors.brown[100],
         appBar: AppBar(
           title: Text("Brewcrew"),
@@ -46,7 +48,14 @@ class Home extends StatelessWidget {
             )
           ],
         ),
-        body: BrewList(),
+        body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/coffee_bg.png'),
+              fit: BoxFit.cover
+            )
+          ),
+          child: BrewList()),
       ),
     );
   }

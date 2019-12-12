@@ -61,7 +61,19 @@ class AuthService {
     }
   }
 
+  //signin using google
+  // Future signinWithGoogle()async{
+  //   try {
+  //     AuthResult result = await _auth.s
+  //   } catch (e) {
+  //   }
+  // }
+
+
+
+
   //sign out
+
   Future signOut() async {
     try {
       return await _auth.signOut();
